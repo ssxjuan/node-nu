@@ -85,7 +85,7 @@ const contable = async(balance, planContable_id) => {
 }
 
 
-app.listen(process.env.PORT || 10000, () => {
+app.listen(process.env.PORT || 8080, () => {
 
     console.log('listening', key_prod)
 
@@ -130,6 +130,7 @@ app.listen(process.env.PORT || 10000, () => {
 
 
     const actualizeAccounts = setInterval(async() => {
+        console.log('Actualizando...')
         const snapshot = await plans__.get();
         snapshot.forEach(document => {
             const setBal = async() => {
